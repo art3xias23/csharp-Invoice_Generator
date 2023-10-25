@@ -4,11 +4,11 @@ namespace WinForms.Invoice.Generator
 {
     public partial class Form1 : Form
     {
-        private LinkedList<UserControl> ViewControls;
-        private LinkedListNode<UserControl> _currentScreen;
+        private LinkedList<ISaveUserControl> ViewControls;
+        private LinkedListNode<ISaveUserControl> _currentScreen;
         public Form1()
         {
-            ViewControls = new LinkedList<UserControl>(new UserControl[] { 
+            ViewControls = new LinkedList<ISaveUserControl>(new ISaveUserControl[] { 
                 new InvoiceType(),
                 new InvoiceCurrency(),
                 new InvoiceFirm(Enums.FirmTypeEnum.Origin),
@@ -32,6 +32,7 @@ namespace WinForms.Invoice.Generator
             var nextScreen = _currentScreen?.Next;
             if (nextScreen != null)
             {
+                _currentScreen!.Value.Save();
                 pnlMain2.Controls.Clear();
                 pnlMain2.Controls.Add(nextScreen.Value);
                 _currentScreen = nextScreen;

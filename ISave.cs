@@ -1,7 +1,7 @@
 ﻿namespace WinForms.Invoice.Generator
 {
-    public interface ISave
+    public abstract class ISaveUserControl : UserControl
     {
-        void Save();
+        public abstract void Save();
     }
 }

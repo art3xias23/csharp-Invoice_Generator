@@ -2,7 +2,7 @@
 
 namespace WinForms.Invoice.Generator
 {
-    public partial class InvoiceType : UserControl, ISave
+    public partial class InvoiceType : ISaveUserControl
     {
 
         public InvoiceType()

@@ -3,7 +3,7 @@ using WinForms.Invoice.Generator.Structure;
 
 namespace WinForms.Invoice.Generator
 {
-    public partial class InvoiceCalendar : UserControl, ISave
+    public partial class InvoiceCalendar : ISaveUserControl
     {
         private readonly BindingSource _bindingSource = new();
         private readonly BindingList<ListBoxItem> _bindingList;

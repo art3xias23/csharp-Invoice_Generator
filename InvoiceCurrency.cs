@@ -1,6 +1,6 @@
 ﻿namespace WinForms.Invoice.Generator
 {
-    public partial class InvoiceCurrency : UserControl, ISave
+    public partial class InvoiceCurrency :  ISaveUserControl
     {
         public InvoiceCurrency()
         {

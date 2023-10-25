@@ -1,6 +1,6 @@
 ﻿namespace WinForms.Invoice.Generator
 {
-    public partial class InvoiceFirm : UserControl, ISave
+    public partial class InvoiceFirm :  ISaveUserControl
     {
         private Enums.FirmTypeEnum _firmType;
         public InvoiceFirm(Enums.FirmTypeEnum firmType)
