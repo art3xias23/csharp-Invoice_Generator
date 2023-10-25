@@ -28,73 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.calendar = new System.Windows.Forms.MonthCalendar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox = new System.Windows.Forms.ListBox();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlControls = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlTitle.SuspendLayout();
             this.SuspendLayout();
             // 
-            // calendar
+            // pnlMain
             // 
-            this.calendar.Location = new System.Drawing.Point(56, 53);
-            this.calendar.Name = "calendar";
-            this.calendar.TabIndex = 0;
-            this.calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateSelected);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMain.Location = new System.Drawing.Point(0, 60);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(595, 352);
+            this.pnlMain.TabIndex = 0;
             // 
-            // label1
+            // pnlControls
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(584, 52);
-            this.label1.TabIndex = 1;
-            this.label1.Tag = "";
-            this.label1.Text = "Please select the dates when you will not be working";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pnlControls.Controls.Add(this.pictureBox2);
+            this.pnlControls.Controls.Add(this.pictureBox1);
+            this.pnlControls.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlControls.Location = new System.Drawing.Point(0, 412);
+            this.pnlControls.Name = "pnlControls";
+            this.pnlControls.Size = new System.Drawing.Size(595, 60);
+            this.pnlControls.TabIndex = 1;
             // 
-            // button1
+            // pictureBox2
             // 
-            this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(136, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(308, 32);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Finish";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox2.Image = global::WinForms.Invoice.Generator.Resource1.right_arrow;
+            this.pictureBox2.Location = new System.Drawing.Point(351, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(146, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
-            // listBox
+            // pictureBox1
             // 
-            this.listBox.FormattingEnabled = true;
-            this.listBox.ItemHeight = 15;
-            this.listBox.Location = new System.Drawing.Point(358, 61);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(214, 154);
-            this.listBox.TabIndex = 3;
+            this.pictureBox1.Image = global::WinForms.Invoice.Generator.Resource1.left_arrow;
+            this.pictureBox1.Location = new System.Drawing.Point(85, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pnlTitle
+            // 
+            this.pnlTitle.Controls.Add(this.lblTitle);
+            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(595, 60);
+            this.pnlTitle.TabIndex = 2;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.ForeColor = System.Drawing.Color.Blue;
+            this.lblTitle.Location = new System.Drawing.Point(219, 21);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(131, 25);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Invoice Creator";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 279);
-            this.Controls.Add(this.listBox);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.calendar);
+            this.ClientSize = new System.Drawing.Size(595, 472);
+            this.Controls.Add(this.pnlControls);
+            this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlTitle);
             this.ForeColor = System.Drawing.SystemColors.Control;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.pnlControls.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MonthCalendar calendar;
-        private Label label1;
-        private Button button1;
-        private ListBox listBox;
+        private Panel pnlMain;
+        private Panel pnlControls;
+        private Panel pnlTitle;
+        private Label lblTitle;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
     }
 }
