@@ -71,8 +71,9 @@
             this.monthCalendar1.Location = new System.Drawing.Point(40, 66);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
-            // Calendar
+            // InvoiceCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,8 +81,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
-            this.Name = "Calendar";
+            this.Name = "InvoiceCalendar";
             this.Size = new System.Drawing.Size(547, 294);
+            this.Load += new System.EventHandler(this.InvoiceCalendar_Load);
             this.ResumeLayout(false);
 
         }

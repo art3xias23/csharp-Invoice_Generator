@@ -5,12 +5,10 @@ namespace WinForms.Invoice.Generator
     public partial class Form1 : Form
     {
         private LinkedList<UserControl> ViewControls;
-        private TransitionalData _transitionalData;
         private LinkedListNode<UserControl> _currentScreen;
         public Form1()
         {
-            _transitionalData = new TransitionalData();
-            ViewControls = new LinkedList<UserControl>(new UserControl[] { new InvoiceType(_transitionalData), new InvoiceCalendar(_transitionalData) });
+            ViewControls = new LinkedList<UserControl>(new UserControl[] { new InvoiceType(), new InvoiceCalendar() });
             _currentScreen = ViewControls.First;
             InitializeComponent();
         }

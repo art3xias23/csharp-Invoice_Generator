@@ -1,8 +1,7 @@
-﻿
-namespace WinForms.Invoice.Generator
+﻿namespace WinForms.Invoice.Generator
 {
     public class TransitionalData
     {
-        public string MonthToDisplay { get; set; }
+        public string InvoiceMonth { get; set; }
     }
 }

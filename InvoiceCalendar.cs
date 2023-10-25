@@ -6,8 +6,7 @@ namespace WinForms.Invoice.Generator
     {
         private readonly BindingSource _bindingSource = new();
         private readonly BindingList<ListBoxItem> _bindingList;
-        private readonly TransitionalData _transitionalData;
-        public InvoiceCalendar(TransitionalData transitionalData)
+        public InvoiceCalendar()
         {
             InitializeComponent();
             _bindingList = new BindingList<ListBoxItem>();
@@ -19,12 +18,7 @@ namespace WinForms.Invoice.Generator
             var contextMenu = new ContextMenuStrip();
             listBox.ContextMenuStrip = contextMenu;
             contextMenu.Items.Add("Delete", null, ContextMenuItem_Click);
-            _transitionalData = transitionalData;
 
-            if (transitionalData.MonthToDisplay == "Next Month")
-            {
-                monthCalendar1.SetDate(DateTime.Today.Date.AddMonths(1));
-            }
         }
 
         private void ContextMenuItem_Click(object? sender, EventArgs e)
@@ -42,10 +36,19 @@ namespace WinForms.Invoice.Generator
             }
         }
 
-        private void calendar_DateSelected(object sender, DateRangeEventArgs e)
+
+        private void InvoiceCalendar_Load(object sender, EventArgs e)
         {
-            _bindingList.Add(new ListBoxItem(e.Start));
+            if (SingletonData.Instance.transitionalData.InvoiceMonth == "Next Month")
+            {
+                monthCalendar1.SetDate(DateTime.Now.AddMonths(1));
+            }
         }
 
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+
+            _bindingList.Add(new ListBoxItem(e.Start));
+        }
     }
 }
