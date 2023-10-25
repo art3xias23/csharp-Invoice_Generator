@@ -2,11 +2,11 @@
 
 namespace WinForms.Invoice.Generator
 {
-    public partial class Calendar : UserControl
+    public partial class InvoiceCalendar : UserControl
     {
         private readonly BindingSource _bindingSource = new();
         private readonly BindingList<ListBoxItem> _bindingList;
-        public Calendar()
+        public InvoiceCalendar()
         {
             InitializeComponent();
             _bindingList = new BindingList<ListBoxItem>();

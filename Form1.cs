@@ -4,9 +4,10 @@ namespace WinForms.Invoice.Generator
 {
     public partial class Form1 : Form
     {
-        private LinkedList<UserControl> Controls;
+        private LinkedList<UserControl> ViewControls;
         public Form1()
         {
+            ViewControls = new LinkedList<UserControl>(new UserControl[] {new InvoiceType(), new InvoiceCalendar()});
             InitializeComponent();
         }
 

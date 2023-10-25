@@ -1,6 +1,6 @@
 ﻿namespace WinForms.Invoice.Generator
 {
-    partial class Calendar
+    partial class InvoiceCalendar
     {
         /// <summary> 
         /// Required designer variable.
