@@ -13,7 +13,7 @@ namespace WinForms.Invoice.Generator
                 new InvoiceCurrency(),
                 new InvoiceFirm(Enums.FirmTypeEnum.Origin),
                 new InvoiceFirm(Enums.FirmTypeEnum.Target),
-                new BankDetails(),
+                new InvoiceBank(),
                 new InvoiceCalendar()
             });
             _currentScreen = ViewControls.First;

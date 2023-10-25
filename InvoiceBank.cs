@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WinForms.Invoice.Generator
 {
-    public partial class BankDetails : UserControl
+    public partial class  InvoiceBank: UserControl, ISave
     {
-        public BankDetails()
+        public InvoiceBank()
         {
             InitializeComponent();
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
         }
     }
 }

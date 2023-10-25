@@ -17,7 +17,14 @@ namespace WinForms.Invoice.Generator.Structure
 
         public static SingletonData? Instance
         {
-            get { return instance ?? (instance = new SingletonData(new TransitionalData())); }
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new SingletonData(new TransitionalData());
+                }
+                return instance;
+            }
         }
     }
 }

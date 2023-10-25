@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="InvoiceBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Resource1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

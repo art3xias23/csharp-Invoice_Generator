@@ -1,6 +1,6 @@
 ﻿namespace WinForms.Invoice.Generator
 {
-    partial class BankDetails
+    partial class InvoiceBank
     {
         /// <summary> 
         /// Required designer variable.
@@ -58,7 +58,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(547, 28);
             this.lblTitle.TabIndex = 29;
-            this.lblTitle.Text = "Firm Details";
+            this.lblTitle.Text = "Bank Details";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtPostcode
@@ -205,7 +205,7 @@
             this.label5.TabIndex = 34;
             this.label5.Text = "Sort Code";
             // 
-            // BankDetails
+            // InvoiceBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,7 +228,7 @@
             this.Controls.Add(this.lblAddressLine1);
             this.Controls.Add(this.txtBankName);
             this.Controls.Add(this.label1);
-            this.Name = "BankDetails";
+            this.Name = "InvoiceBank";
             this.Size = new System.Drawing.Size(547, 294);
             this.ResumeLayout(false);
             this.PerformLayout();
