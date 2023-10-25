@@ -207,12 +207,6 @@
         private Label lblTitle;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Panel pnlTitle1;
-        private Panel pnlNavigation1;
-        private Panel pnlMain1;
-        private Label label1;
-        private PictureBox pbRight;
-        private PictureBox pbLeft;
         private Panel pnlTitle2;
         private Panel pnlNavigation2;
         private Panel pnlMain2;

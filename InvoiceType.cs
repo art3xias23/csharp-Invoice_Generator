@@ -1,8 +1,9 @@
-﻿using WinForms.Invoice.Generator.Structure;
+﻿using System.Security.Cryptography.X509Certificates;
+using WinForms.Invoice.Generator.Structure;
 
 namespace WinForms.Invoice.Generator
 {
-    public partial class InvoiceType : ISaveUserControl
+    public partial class InvoiceType :UserControl, ISave
     {
 
         public InvoiceType()
@@ -19,7 +20,10 @@ namespace WinForms.Invoice.Generator
 
         public void Save()
         {
-            throw new NotImplementedException();
+        }
+
+        private void InvoiceType_VisibleChanged(object sender, EventArgs e)
+        {
         }
     }
 }

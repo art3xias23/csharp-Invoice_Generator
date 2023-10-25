@@ -3,7 +3,7 @@ using WinForms.Invoice.Generator.Structure;
 
 namespace WinForms.Invoice.Generator
 {
-    public partial class InvoiceCalendar : ISaveUserControl
+    public partial class InvoiceCalendar : UserControl, ISave
     {
         private readonly BindingSource _bindingSource = new();
         private readonly BindingList<ListBoxItem> _bindingList;
@@ -31,12 +31,12 @@ namespace WinForms.Invoice.Generator
         {
             if (e.Button == MouseButtons.Right)
             {
-                // Show the context menu at the cursor's location
-                ListBox listBox = (ListBox)sender;
-                listBox.ContextMenuStrip.Show(listBox, e.Location);
+                if (sender is ListBox lb)
+                {
+                    lb.ContextMenuStrip.Show(listBox, e.Location);
+                }
             }
         }
-
 
         private void InvoiceCalendar_Load(object sender, EventArgs e)
         {

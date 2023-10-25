@@ -4,5 +4,20 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="InvoiceBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="InvoiceCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="InvoiceCurrency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="InvoiceFirm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="InvoiceType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

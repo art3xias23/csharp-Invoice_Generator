@@ -2,7 +2,7 @@ namespace WinForms.Invoice.Generator.Data;
 
 public class Invoice
 {
-    public string Currency { get; set; }
+    public string? Currency { get; set; }
     public Firm OriginFirm { get; set; }
     public Firm TargetFirm { get; set; }
     public BankDetails OriginBankDetails { get; set; }

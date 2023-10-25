@@ -15,7 +15,7 @@ namespace WinForms.Invoice.Generator.Structure
 
         private static SingletonData? instance = null;
 
-        public static SingletonData? Instance
+        public static SingletonData Instance
         {
             get
             {

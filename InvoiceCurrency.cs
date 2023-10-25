@@ -1,6 +1,8 @@
-﻿namespace WinForms.Invoice.Generator
+﻿using WinForms.Invoice.Generator.Structure;
+
+namespace WinForms.Invoice.Generator
 {
-    public partial class InvoiceCurrency :  ISaveUserControl
+    public partial class InvoiceCurrency : UserControl, ISave
     {
         public InvoiceCurrency()
         {
@@ -11,7 +13,7 @@
 
         public void Save()
         {
-            throw new NotImplementedException();
+            SingletonData.Instance.InvoiceData!.Currency = cmbCurrency.SelectedItem?.ToString();
         }
     }
 }

@@ -61,6 +61,7 @@
             this.Controls.Add(this.label1);
             this.Name = "InvoiceType";
             this.Size = new System.Drawing.Size(547, 294);
+            this.VisibleChanged += new System.EventHandler(this.InvoiceType_VisibleChanged);
             this.ResumeLayout(false);
 
         }
