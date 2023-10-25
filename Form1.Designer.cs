@@ -34,20 +34,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlTitle2 = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
-            this.pbLeft2 = new System.Windows.Forms.PictureBox();
+            this.pnlNavigation2 = new System.Windows.Forms.Panel();
             this.pbRight2 = new System.Windows.Forms.PictureBox();
+            this.pbLeft3 = new System.Windows.Forms.PictureBox();
+            this.pnlMain2 = new System.Windows.Forms.Panel();
             this.pnlControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTitle.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLeft2)).BeginInit();
+            this.pnlTitle2.SuspendLayout();
+            this.pnlNavigation2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRight2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLeft3)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -109,29 +109,14 @@
             this.lblTitle.Text = "Invoice Creator";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // pnlTitle2
             // 
-            this.panel1.Controls.Add(this.lblTitle2);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(597, 52);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pbRight2);
-            this.panel2.Controls.Add(this.pbLeft2);
-            this.panel2.Location = new System.Drawing.Point(-1, 420);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(597, 52);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(-1, 58);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(597, 356);
-            this.panel3.TabIndex = 2;
+            this.pnlTitle2.Controls.Add(this.lblTitle2);
+            this.pnlTitle2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitle2.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitle2.Name = "pnlTitle2";
+            this.pnlTitle2.Size = new System.Drawing.Size(595, 52);
+            this.pnlTitle2.TabIndex = 0;
             // 
             // lblTitle2
             // 
@@ -140,23 +125,24 @@
             this.lblTitle2.ForeColor = System.Drawing.Color.Blue;
             this.lblTitle2.Location = new System.Drawing.Point(0, 0);
             this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(597, 52);
+            this.lblTitle2.Size = new System.Drawing.Size(595, 52);
             this.lblTitle2.TabIndex = 0;
             this.lblTitle2.Text = "Invoice Generator";
             this.lblTitle2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pbLeft2
+            // pnlNavigation2
             // 
-            this.pbLeft2.Image = global::WinForms.Invoice.Generator.Resource1.left_arrow;
-            this.pbLeft2.Location = new System.Drawing.Point(97, 3);
-            this.pbLeft2.Name = "pbLeft2";
-            this.pbLeft2.Size = new System.Drawing.Size(143, 46);
-            this.pbLeft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLeft2.TabIndex = 0;
-            this.pbLeft2.TabStop = false;
+            this.pnlNavigation2.Controls.Add(this.pbRight2);
+            this.pnlNavigation2.Controls.Add(this.pbLeft3);
+            this.pnlNavigation2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNavigation2.Location = new System.Drawing.Point(0, 408);
+            this.pnlNavigation2.Name = "pnlNavigation2";
+            this.pnlNavigation2.Size = new System.Drawing.Size(595, 52);
+            this.pnlNavigation2.TabIndex = 1;
             // 
             // pbRight2
             // 
+            this.pbRight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbRight2.Image = global::WinForms.Invoice.Generator.Resource1.right_arrow;
             this.pbRight2.Location = new System.Drawing.Point(337, 3);
             this.pbRight2.Name = "pbRight2";
@@ -164,15 +150,36 @@
             this.pbRight2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRight2.TabIndex = 1;
             this.pbRight2.TabStop = false;
+            this.pbRight2.Click += new System.EventHandler(this.pbRight2_Click);
+            // 
+            // pbLeft3
+            // 
+            this.pbLeft3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbLeft3.Image = global::WinForms.Invoice.Generator.Resource1.left_arrow;
+            this.pbLeft3.Location = new System.Drawing.Point(97, 3);
+            this.pbLeft3.Name = "pbLeft3";
+            this.pbLeft3.Size = new System.Drawing.Size(143, 46);
+            this.pbLeft3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLeft3.TabIndex = 0;
+            this.pbLeft3.TabStop = false;
+            this.pbLeft3.Click += new System.EventHandler(this.pbLeft2_Click);
+            // 
+            // pnlMain2
+            // 
+            this.pnlMain2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMain2.Location = new System.Drawing.Point(0, 52);
+            this.pnlMain2.Name = "pnlMain2";
+            this.pnlMain2.Size = new System.Drawing.Size(595, 356);
+            this.pnlMain2.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 472);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlNavigation2);
+            this.Controls.Add(this.pnlMain2);
+            this.Controls.Add(this.pnlTitle2);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -184,10 +191,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLeft2)).EndInit();
+            this.pnlTitle2.ResumeLayout(false);
+            this.pnlNavigation2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbRight2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLeft3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,11 +213,11 @@
         private Label label1;
         private PictureBox pbRight;
         private PictureBox pbLeft;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
+        private Panel pnlTitle2;
+        private Panel pnlNavigation2;
+        private Panel pnlMain2;
         private Label lblTitle2;
         private PictureBox pbRight2;
-        private PictureBox pbLeft2;
+        private PictureBox pbLeft3;
     }
 }

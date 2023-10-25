@@ -2,10 +2,14 @@
 {
     public partial class InvoiceType : UserControl
     {
-        public InvoiceType()
+        private TransitionalData _transitionalData;
+
+        public InvoiceType(TransitionalData transitionalData)
         {
+            _transitionalData = transitionalData;
             InitializeComponent();
             comboBox1.Items.Add("Current Month");
+            comboBox1.Items.Add("Next Month");
         }
     }
 }
