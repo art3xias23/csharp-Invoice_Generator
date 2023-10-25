@@ -1,10 +1,20 @@
-namespace WinForms.Invoice.Generator;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-    public class BankDetails
+namespace WinForms.Invoice.Generator
+{
+    public partial class BankDetails : UserControl
     {
-        public string Bank { get; set; }
-        public Address Address { get; set; }
-        public string Beneficiary { get; set; }
-        public string BankAccount { get; set; }
-        public string SortCode { get; set; }
+        public BankDetails()
+        {
+            InitializeComponent();
+        }
     }
+}

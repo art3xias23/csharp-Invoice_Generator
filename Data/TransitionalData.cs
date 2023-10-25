@@ -1,4 +1,4 @@
-﻿namespace WinForms.Invoice.Generator
+﻿namespace WinForms.Invoice.Generator.Data
 {
     public class TransitionalData
     {

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using WinForms.Invoice.Generator.Structure;
 
 namespace WinForms.Invoice.Generator
 {
@@ -39,7 +40,7 @@ namespace WinForms.Invoice.Generator
 
         private void InvoiceCalendar_Load(object sender, EventArgs e)
         {
-            if (SingletonData.Instance.transitionalData.InvoiceMonth == "Next Month")
+            if (SingletonData.Instance.TransitionalData.InvoiceMonth == "Next Month")
             {
                 monthCalendar1.SetDate(DateTime.Now.AddMonths(1));
             }

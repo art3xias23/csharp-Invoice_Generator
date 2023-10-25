@@ -8,7 +8,14 @@ namespace WinForms.Invoice.Generator
         private LinkedListNode<UserControl> _currentScreen;
         public Form1()
         {
-            ViewControls = new LinkedList<UserControl>(new UserControl[] { new InvoiceType(), new InvoiceCalendar() });
+            ViewControls = new LinkedList<UserControl>(new UserControl[] { 
+                new InvoiceType(),
+                new InvoiceCurrency(),
+                new InvoiceFirm(Enums.FirmTypeEnum.Origin),
+                new InvoiceFirm(Enums.FirmTypeEnum.Target),
+                new BankDetails(),
+                new InvoiceCalendar()
+            });
             _currentScreen = ViewControls.First;
             InitializeComponent();
         }

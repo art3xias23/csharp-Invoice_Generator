@@ -1,4 +1,6 @@
-﻿namespace WinForms.Invoice.Generator
+﻿using WinForms.Invoice.Generator.Structure;
+
+namespace WinForms.Invoice.Generator
 {
     public partial class InvoiceType : UserControl
     {
@@ -12,7 +14,7 @@
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SingletonData.Instance.transitionalData.InvoiceMonth = (string)comboBox1.SelectedItem;
+            SingletonData.Instance.TransitionalData.InvoiceMonth = (string)comboBox1.SelectedItem;
         }
     }
 }

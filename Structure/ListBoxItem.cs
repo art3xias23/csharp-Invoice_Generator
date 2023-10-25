@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace WinForms.Invoice.Generator
+namespace WinForms.Invoice.Generator.Structure
 {
     internal class ListBoxItem : INotifyPropertyChanged
     {
