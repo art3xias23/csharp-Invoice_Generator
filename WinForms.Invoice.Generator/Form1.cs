@@ -34,6 +34,12 @@ namespace WinForms.Invoice.Generator
                 {
                     saveInstance.Save();
                 }
+
+                if (nextScreen.Value is InvoiceCalendar)
+                {
+                    btnCreateInvoice.Visible = true;
+                    pbRight2.Visible = false;
+                }
                 pnlMain2.Controls.Clear();
                 pnlMain2.Controls.Add(nextScreen.Value);
                 _currentScreen = nextScreen;
@@ -45,6 +51,12 @@ namespace WinForms.Invoice.Generator
             var previousScreen = _currentScreen?.Previous;
             if (previousScreen != null)
             {
+                if (previousScreen.Value is InvoiceBank)
+                {
+                    btnCreateInvoice.Visible = false;
+                    pbRight2.Visible = true;
+                }
+
                 pnlMain2.Controls.Clear();
                 pnlMain2.Controls.Add(previousScreen.Value);
                 _currentScreen = previousScreen;

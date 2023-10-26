@@ -40,6 +40,7 @@
             this.pbRight2 = new System.Windows.Forms.PictureBox();
             this.pbLeft3 = new System.Windows.Forms.PictureBox();
             this.pnlMain2 = new System.Windows.Forms.Panel();
+            this.btnCreateInvoice = new System.Windows.Forms.Button();
             this.pnlControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -132,6 +133,7 @@
             // 
             // pnlNavigation2
             // 
+            this.pnlNavigation2.Controls.Add(this.btnCreateInvoice);
             this.pnlNavigation2.Controls.Add(this.pbRight2);
             this.pnlNavigation2.Controls.Add(this.pbLeft3);
             this.pnlNavigation2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -144,7 +146,7 @@
             // 
             this.pbRight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbRight2.Image = global::WinForms.Invoice.Generator.Resource1.right_arrow;
-            this.pbRight2.Location = new System.Drawing.Point(337, 3);
+            this.pbRight2.Location = new System.Drawing.Point(449, 0);
             this.pbRight2.Name = "pbRight2";
             this.pbRight2.Size = new System.Drawing.Size(143, 46);
             this.pbRight2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,7 +158,7 @@
             // 
             this.pbLeft3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbLeft3.Image = global::WinForms.Invoice.Generator.Resource1.left_arrow;
-            this.pbLeft3.Location = new System.Drawing.Point(97, 3);
+            this.pbLeft3.Location = new System.Drawing.Point(3, 0);
             this.pbLeft3.Name = "pbLeft3";
             this.pbLeft3.Size = new System.Drawing.Size(143, 46);
             this.pbLeft3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,6 +173,17 @@
             this.pnlMain2.Name = "pnlMain2";
             this.pnlMain2.Size = new System.Drawing.Size(595, 356);
             this.pnlMain2.TabIndex = 2;
+            // 
+            // btnCreateInvoice
+            // 
+            this.btnCreateInvoice.ForeColor = System.Drawing.Color.Blue;
+            this.btnCreateInvoice.Location = new System.Drawing.Point(182, 3);
+            this.btnCreateInvoice.Name = "btnCreateInvoice";
+            this.btnCreateInvoice.Size = new System.Drawing.Size(223, 45);
+            this.btnCreateInvoice.TabIndex = 2;
+            this.btnCreateInvoice.Text = "Create Invoice";
+            this.btnCreateInvoice.UseVisualStyleBackColor = true;
+            this.btnCreateInvoice.Visible = false;
             // 
             // Form1
             // 
@@ -213,5 +226,6 @@
         private Label lblTitle2;
         private PictureBox pbRight2;
         private PictureBox pbLeft3;
+        private Button btnCreateInvoice;
     }
 }
