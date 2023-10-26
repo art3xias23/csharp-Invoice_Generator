@@ -110,7 +110,7 @@ namespace WinForms.Invoice.Generator
             SingletonData.Instance.InvoiceData.WorkingDays = _workingDays;
             var wordDocument = new MsWord(SingletonData.Instance.InvoiceData);
 
-            wordDocument.CreateInvoice();
+            wordDocument.CreateDocument();
 
         }
     }

@@ -59,11 +59,13 @@
             // 
             this.lblDocType.AutoSize = true;
             this.lblDocType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDocType.ForeColor = System.Drawing.Color.Blue;
             this.lblDocType.Location = new System.Drawing.Point(117, 122);
             this.lblDocType.Name = "lblDocType";
             this.lblDocType.Size = new System.Drawing.Size(52, 21);
             this.lblDocType.TabIndex = 2;
             this.lblDocType.Text = "label2";
+            this.lblDocType.Visible = false;
             // 
             // txtDocTypeId
             // 
@@ -72,6 +74,7 @@
             this.txtDocTypeId.Name = "txtDocTypeId";
             this.txtDocTypeId.Size = new System.Drawing.Size(149, 29);
             this.txtDocTypeId.TabIndex = 3;
+            this.txtDocTypeId.Visible = false;
             // 
             // InvoiceType
             // 
