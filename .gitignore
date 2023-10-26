@@ -1,4 +1,4 @@
-Data.json
-bin/*
-obj/*
+**/Data.json
+**/bin/*
+**/obj/*
 .vs/*
