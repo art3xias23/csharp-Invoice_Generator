@@ -37,10 +37,10 @@
             this.pnlTitle2 = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.pnlNavigation2 = new System.Windows.Forms.Panel();
+            this.btnCreateInvoice = new System.Windows.Forms.Button();
             this.pbRight2 = new System.Windows.Forms.PictureBox();
             this.pbLeft3 = new System.Windows.Forms.PictureBox();
             this.pnlMain2 = new System.Windows.Forms.Panel();
-            this.btnCreateInvoice = new System.Windows.Forms.Button();
             this.pnlControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -142,6 +142,18 @@
             this.pnlNavigation2.Size = new System.Drawing.Size(595, 52);
             this.pnlNavigation2.TabIndex = 1;
             // 
+            // btnCreateInvoice
+            // 
+            this.btnCreateInvoice.ForeColor = System.Drawing.Color.Blue;
+            this.btnCreateInvoice.Location = new System.Drawing.Point(182, 3);
+            this.btnCreateInvoice.Name = "btnCreateInvoice";
+            this.btnCreateInvoice.Size = new System.Drawing.Size(223, 45);
+            this.btnCreateInvoice.TabIndex = 2;
+            this.btnCreateInvoice.Text = "Create Invoice";
+            this.btnCreateInvoice.UseVisualStyleBackColor = true;
+            this.btnCreateInvoice.Visible = false;
+            this.btnCreateInvoice.Click += new System.EventHandler(this.btnCreateInvoice_Click);
+            // 
             // pbRight2
             // 
             this.pbRight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -173,17 +185,6 @@
             this.pnlMain2.Name = "pnlMain2";
             this.pnlMain2.Size = new System.Drawing.Size(595, 356);
             this.pnlMain2.TabIndex = 2;
-            // 
-            // btnCreateInvoice
-            // 
-            this.btnCreateInvoice.ForeColor = System.Drawing.Color.Blue;
-            this.btnCreateInvoice.Location = new System.Drawing.Point(182, 3);
-            this.btnCreateInvoice.Name = "btnCreateInvoice";
-            this.btnCreateInvoice.Size = new System.Drawing.Size(223, 45);
-            this.btnCreateInvoice.TabIndex = 2;
-            this.btnCreateInvoice.Text = "Create Invoice";
-            this.btnCreateInvoice.UseVisualStyleBackColor = true;
-            this.btnCreateInvoice.Visible = false;
             // 
             // Form1
             // 

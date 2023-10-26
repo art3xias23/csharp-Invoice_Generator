@@ -1,3 +1,6 @@
+using WinForms.Invoice.Generator.Logic;
+using WinForms.Invoice.Generator.Structure;
+
 namespace WinForms.Invoice.Generator
 {
     public partial class Form1 : Form
@@ -61,6 +64,13 @@ namespace WinForms.Invoice.Generator
                 pnlMain2.Controls.Add(previousScreen.Value);
                 _currentScreen = previousScreen;
             }
+        }
+
+        private void btnCreateInvoice_Click(object sender, EventArgs e)
+        {
+            var wordDocument = new MsWord(SingletonData.Instance.InvoiceData);
+
+            wordDocument.CreateInvoice();
         }
     }
 }

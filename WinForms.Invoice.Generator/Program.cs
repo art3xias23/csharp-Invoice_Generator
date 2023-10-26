@@ -1,3 +1,5 @@
+using WinForms.Invoice.Generator.Logic;
+
 namespace WinForms.Invoice.Generator
 {
     internal static class Program

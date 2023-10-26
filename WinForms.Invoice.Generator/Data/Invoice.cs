@@ -1,7 +1,11 @@
+using DocumentFormat.OpenXml.Presentation;
+
 namespace WinForms.Invoice.Generator.Data;
 
 public class Invoice
 {
+    public decimal HoursPerDay { get; set; }
+    public decimal HourlyPayment { get; set; }
     public string? Currency { get; set; }
     public Firm? OriginFirm { get; set; }
     public Firm? TargetFirm { get; set; }
