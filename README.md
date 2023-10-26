@@ -5,4 +5,5 @@ A small, quick and dirty data driven winforms invoice generator with calendar da
 
 Example Word Document
 
-[2310_Invoice_Original_Firm_Name.docx](https://github.com/art3xias23/csharp-Invoice_Generator/files/13178428/2310_Invoice_Original_Firm_Name.docx)
+
+![Capture](https://github.com/art3xias23/csharp-Invoice_Generator/assets/23562239/f1fe744f-557e-4876-8555-d417b6940044)
