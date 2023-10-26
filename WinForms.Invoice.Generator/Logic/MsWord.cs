@@ -120,7 +120,7 @@ namespace WinForms.Invoice.Generator.Logic
 
             document.AddParagraph(_data.InvoiceParagraph3
                 .Replace("{hours_placeholder}", _data.HoursPerDay.ToString())
-                .Replace("{days_placeholder}", _data.WorkingDays.Count.ToString())
+                .Replace("{days_placeholder}", _data.WorkingDays.Where(x=>x.IsWorkingDay).ToList().Count.ToString())
                 .Replace("{per_hour_payment}", _data.HourlyPayment.ToString())
                 .Replace("{currency_placeholder}", _data.Currency)
                 .Replace("{total_amount_placeholder}", GetTotalAmountPayable(_data)?.ToString()));
@@ -207,7 +207,7 @@ namespace WinForms.Invoice.Generator.Logic
 
             document.AddParagraph(_data.QuoteParagraph3
                 .Replace("{hours_placeholder}", _data.HoursPerDay.ToString())
-                .Replace("{days_placeholder}", _data.WorkingDays.Count.ToString())
+                .Replace("{days_placeholder}", _data.WorkingDays.Where(x=>x.IsWorkingDay).ToList().Count.ToString())
                 .Replace("{per_hour_payment}", _data.HourlyPayment.ToString())
                 .Replace("{currency_placeholder}", _data.Currency)
                 .Replace("{total_amount_placeholder}", GetTotalAmountPayable(_data)?.ToString()));
