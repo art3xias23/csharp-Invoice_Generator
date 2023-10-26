@@ -1,15 +1,12 @@
-﻿using WinForms.Invoice.Generator.Data;
-using WinForms.Invoice.Generator.Logic;
+﻿using WinForms.Invoice.Generator.Logic;
 
 namespace WinForms.Invoice.Generator.Structure
 {
     public class SingletonData
     {
-        public TransitionalData TransitionalData;
         public Data.Invoice? InvoiceData;
-        private SingletonData(TransitionalData transitionalData)
+        private SingletonData()
         {
-            TransitionalData = transitionalData;
             InvoiceData = JsonData.GetInvoice();
         }
 
@@ -21,7 +18,7 @@ namespace WinForms.Invoice.Generator.Structure
             {
                 if (instance == null)
                 {
-                    instance = new SingletonData(new TransitionalData());
+                    instance = new SingletonData();
                 }
                 return instance;
             }

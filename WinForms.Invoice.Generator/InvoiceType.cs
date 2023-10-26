@@ -9,21 +9,22 @@ namespace WinForms.Invoice.Generator
         public InvoiceType()
         {
             InitializeComponent();
-            comboBox1.Items.Add("Current Month");
-            comboBox1.Items.Add("Next Month");
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SingletonData.Instance.TransitionalData.InvoiceMonth = (string)comboBox1.SelectedItem;
+            comboBox1.Items.Add(Enums.DocumentType.Invoice);
+            comboBox1.Items.Add(Enums.DocumentType.Quote);
         }
 
         public void Save()
         {
+            SingletonData.Instance.InvoiceData.DocumentType = (Enums.DocumentType)comboBox1.SelectedItem;
         }
 
         private void InvoiceType_VisibleChanged(object sender, EventArgs e)
         {
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

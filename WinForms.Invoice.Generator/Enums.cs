@@ -2,10 +2,10 @@
 {
     public class Enums
     {
-        public enum CalendarMonthTypeEnum
+        public enum DocumentType 
         {
-            Next,
-            Current
+            Quote,
+            Invoice 
         }
 
         public enum FirmTypeEnum 

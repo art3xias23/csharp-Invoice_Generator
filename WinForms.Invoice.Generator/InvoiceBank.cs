@@ -20,7 +20,7 @@ namespace WinForms.Invoice.Generator
                 instance.OriginBankDetails.SortCode = txtSortCode.Text;
                 if (instance.OriginBankDetails.Address != null)
                 {
-                    instance.OriginBankDetails.Address.AddressLine1 = txtSortCode.Text;
+                    instance.OriginBankDetails.Address.AddressLine1 = txtAddress1.Text;
                     instance.OriginBankDetails.Address.AddressLine2 = txtAddressLine2.Text;
                     instance.OriginBankDetails.Address.City = txtCity.Text;
                     instance.OriginBankDetails.Address.Postcode = txtPostcode.Text;

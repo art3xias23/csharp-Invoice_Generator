@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblDocType = new System.Windows.Forms.Label();
+            this.txtDocTypeId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -53,16 +55,37 @@
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // lblDocType
+            // 
+            this.lblDocType.AutoSize = true;
+            this.lblDocType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDocType.Location = new System.Drawing.Point(117, 122);
+            this.lblDocType.Name = "lblDocType";
+            this.lblDocType.Size = new System.Drawing.Size(52, 21);
+            this.lblDocType.TabIndex = 2;
+            this.lblDocType.Text = "label2";
+            // 
+            // txtDocTypeId
+            // 
+            this.txtDocTypeId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDocTypeId.Location = new System.Drawing.Point(239, 114);
+            this.txtDocTypeId.Name = "txtDocTypeId";
+            this.txtDocTypeId.Size = new System.Drawing.Size(149, 29);
+            this.txtDocTypeId.TabIndex = 3;
+            // 
             // InvoiceType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtDocTypeId);
+            this.Controls.Add(this.lblDocType);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Name = "InvoiceType";
             this.Size = new System.Drawing.Size(547, 294);
             this.VisibleChanged += new System.EventHandler(this.InvoiceType_VisibleChanged);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,5 +93,7 @@
 
         private Label label1;
         private ComboBox comboBox1;
+        private Label lblDocType;
+        private TextBox txtDocTypeId;
     }
 }

@@ -77,7 +77,7 @@ namespace WinForms.Invoice.Generator
 
         private void InvoiceCalendar_Load(object sender, EventArgs e)
         {
-            if (SingletonData.Instance.TransitionalData.InvoiceMonth == "Next Month")
+            if (SingletonData.Instance.InvoiceData.DocumentType == Enums.DocumentType.Quote)
             {
                 monthCalendar1.SetDate(DateTime.Now.AddMonths(1));
                 _workingDays = GetAllWorkingDaysForMonth(1);
