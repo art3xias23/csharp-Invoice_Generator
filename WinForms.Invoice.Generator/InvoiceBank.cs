@@ -19,7 +19,13 @@ namespace WinForms.Invoice.Generator
                 instance.OriginBankDetails.Beneficiary = txtBeneficiary.Text;
                 instance.OriginBankDetails.SortCode = txtSortCode.Text;
                 if (instance.OriginBankDetails.Address != null)
+                {
                     instance.OriginBankDetails.Address.AddressLine1 = txtSortCode.Text;
+                    instance.OriginBankDetails.Address.AddressLine2 = txtAddressLine2.Text;
+                    instance.OriginBankDetails.Address.City = txtCity.Text;
+                    instance.OriginBankDetails.Address.Postcode = txtPostcode.Text;
+                    instance.OriginBankDetails.Address.Country = txtCountry.Text;
+                }
             }
         }
 
@@ -31,7 +37,12 @@ namespace WinForms.Invoice.Generator
             txtBankAccount.Text = instance.OriginBankDetails?.BankAccount;
             txtBeneficiary.Text = instance.OriginBankDetails?.Beneficiary;
             txtSortCode.Text = instance.OriginBankDetails?.SortCode;
-            txtSortCode.Text = instance.OriginBankDetails?.Address?.AddressLine1;
+            txtAddress1.Text = instance.OriginBankDetails?.Address?.AddressLine1;
+            txtAddressLine2.Text = instance.OriginBankDetails?.Address?.AddressLine2;
+            txtCity.Text = instance.OriginBankDetails?.Address?.City;
+            txtPostcode.Text = instance.OriginBankDetails?.Address?.Postcode;
+            txtCountry.Text = instance.OriginBankDetails?.Address?.Country;
+
         }
 
         private void InvoiceBank_Load(object sender, EventArgs e)
