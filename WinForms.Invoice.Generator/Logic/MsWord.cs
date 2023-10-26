@@ -96,7 +96,7 @@ namespace WinForms.Invoice.Generator.Logic
         {
             document.Sections[0].PageOrientation = PageOrientationValues.Landscape;
 
-            document.AddParagraph("Date:" + DateTime.Now.ToString("dd/MM/yyyy"));
+            document.AddParagraph("Date: " + DateTime.Now.ToString("dd/MM/yyyy"));
 
             document.AddParagraph();
 
@@ -155,6 +155,7 @@ namespace WinForms.Invoice.Generator.Logic
             document.AddParagraph();
 
             document.AddParagraph(_data.InvoiceParagraph7);
+            document.AddParagraph();
             document.AddParagraph("Sincerely,");
             document.AddParagraph(_data.OriginFirm.Name);
         }
@@ -187,7 +188,7 @@ namespace WinForms.Invoice.Generator.Logic
 
         internal void CreateQuote(WordDocument document)
         {
-            document.AddParagraph("Date:" + DateTime.Now.ToString("dd/MM/yyyy"));
+            document.AddParagraph("Date: " + DateTime.Now.ToString("dd/MM/yyyy"));
 
             document.AddParagraph();
             AddFirmInfo(document, _data.OriginFirm);
@@ -229,6 +230,7 @@ namespace WinForms.Invoice.Generator.Logic
 
 
             document.AddParagraph(_data.QuoteParagraph5);
+            document.AddParagraph();
             document.AddParagraph("Sincerely,");
             document.AddParagraph(_data.OriginFirm.Name);
         }

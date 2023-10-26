@@ -112,6 +112,8 @@ namespace WinForms.Invoice.Generator
 
             wordDocument.CreateDocument();
 
+            JsonData.SaveData();
+
         }
     }
 }

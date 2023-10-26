@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using WinForms.Invoice.Generator.Data;
+using WinForms.Invoice.Generator.Structure;
 
 namespace WinForms.Invoice.Generator.Logic
 {
@@ -24,6 +26,13 @@ namespace WinForms.Invoice.Generator.Logic
             //LOG
 
 
+        }
+
+        public static void SaveData()
+        {
+            var data = SingletonData.Instance.InvoiceData;
+            data.WorkingDays = new List<WorkingDay>();
+            File.WriteAllText(@"..\..\..\Data.json",JsonConvert.SerializeObject(data));
         }
     }
 }

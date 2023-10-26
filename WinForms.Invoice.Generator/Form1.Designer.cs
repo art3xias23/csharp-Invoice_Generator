@@ -37,6 +37,7 @@
             this.pnlTitle2 = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.pnlNavigation2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pbRight2 = new System.Windows.Forms.PictureBox();
             this.pbLeft3 = new System.Windows.Forms.PictureBox();
             this.pnlMain2 = new System.Windows.Forms.Panel();
@@ -132,6 +133,7 @@
             // 
             // pnlNavigation2
             // 
+            this.pnlNavigation2.Controls.Add(this.button1);
             this.pnlNavigation2.Controls.Add(this.pbRight2);
             this.pnlNavigation2.Controls.Add(this.pbLeft3);
             this.pnlNavigation2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -139,6 +141,17 @@
             this.pnlNavigation2.Name = "pnlNavigation2";
             this.pnlNavigation2.Size = new System.Drawing.Size(595, 52);
             this.pnlNavigation2.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(249, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 32);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pbRight2
             // 
@@ -213,5 +226,6 @@
         private Label lblTitle2;
         private PictureBox pbRight2;
         private PictureBox pbLeft3;
+        private Button button1;
     }
 }

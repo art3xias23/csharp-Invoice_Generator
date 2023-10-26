@@ -5,6 +5,7 @@ namespace WinForms.Invoice.Generator
 {
     public partial class InvoiceType :UserControl, ISave
     {
+        private int _id;
 
         public InvoiceType()
         {
@@ -18,12 +19,12 @@ namespace WinForms.Invoice.Generator
             SingletonData.Instance.InvoiceData.DocumentType = (Enums.DocumentType)comboBox1.SelectedItem;
             if ((Enums.DocumentType)comboBox1.SelectedItem == Enums.DocumentType.Invoice)
             {
-                SingletonData.Instance.InvoiceData.InvoiceId = int.Parse(txtDocTypeId.Text);
+                SingletonData.Instance.InvoiceData.InvoiceId = _id;
             }
             else if((Enums.DocumentType)comboBox1.SelectedItem == Enums.DocumentType.Quote)
             {
 
-                SingletonData.Instance.InvoiceData.QuoteId = int.Parse(txtDocTypeId.Text);
+                SingletonData.Instance.InvoiceData.QuoteId = _id;
             }
         }
 
@@ -36,17 +37,19 @@ namespace WinForms.Invoice.Generator
             var data = SingletonData.Instance.InvoiceData;
             if ((Enums.DocumentType)comboBox1.SelectedItem == Enums.DocumentType.Invoice)
             {
+                _id = data.InvoiceId+1;
                 lblDocType.Visible = true;
                 txtDocTypeId.Visible = true;
                 lblDocType.Text = "InvoiceId:";
-                txtDocTypeId.Text = data.InvoiceId.ToString("D10");
+                txtDocTypeId.Text = _id.ToString("D10");
             }
             else if((Enums.DocumentType)comboBox1.SelectedItem == Enums.DocumentType.Quote)
             {
+                _id = data.QuoteId+1;
                 lblDocType.Visible = true;
                 txtDocTypeId.Visible = true;
                 lblDocType.Text = "QuoteId:";
-                txtDocTypeId.Text = data.QuoteId.ToString("D10");
+                txtDocTypeId.Text = _id.ToString("D10");
             }
         }
     }
