@@ -64,7 +64,7 @@
             this.label1.Size = new System.Drawing.Size(547, 52);
             this.label1.TabIndex = 5;
             this.label1.Tag = "";
-            this.label1.Text = "Please select the dates when you will not be working";
+            this.label1.Text = "Please select your holidays into the right box";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // monthCalendar1

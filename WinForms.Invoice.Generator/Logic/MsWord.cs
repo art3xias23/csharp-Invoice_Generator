@@ -60,34 +60,61 @@ namespace WinForms.Invoice.Generator.Logic
                 document.AddParagraph();
 
                 document.AddHorizontalLine();
-                var table = document.AddTable(_data.WorkingDays.Count, 4, WordTableStyle.GridTable1Light);
+                var table = document.AddTable(_data.WorkingDays.Count, 6, WordTableStyle.GridTable1Light);
                 var workingDayCount = -1;
                 var totalPaymentCount = 0M;
 
                 foreach (var row in table.Rows)
                 {
+
                     if (workingDayCount == -1)
                     {
-                            row.Cells[0].Paragraphs[0].Text = "Date";
-                            row.Cells[1].Paragraphs[0].Text = "Hours";
+                        row.Cells[0].Paragraphs[0].Text = "Date";
+                        row.Cells[1].Paragraphs[0].Text = "Day of Week";
+                        row.Cells[2].Paragraphs[0].Text = "Holiday";
+                        row.Cells[3].Paragraphs[0].Text = "Hours";
 
-                            row.Cells[2].Paragraphs[0].Text = "Rate"; 
+                        row.Cells[4].Paragraphs[0].Text = "Rate";
 
-                            totalPaymentCount = totalPaymentCount + (_data.HourlyPayment * _data.HoursPerDay);
-
-                            row.Cells[3].Paragraphs[0].Text = "SubTotal";
-                            workingDayCount++;
-                            continue;
+                        row.Cells[5].Paragraphs[0].Text = "SubTotal";
+                        workingDayCount++;
+                        continue;
                     }
-                    row.Cells[0].Paragraphs[0].Text = _data.WorkingDays[workingDayCount].ToString("dd/MM/yyyy");
 
-                    row.Cells[1].Paragraphs[0].Text = _data.HoursPerDay.ToString();
+                    var workingDay = _data.WorkingDays[workingDayCount];
 
-                    row.Cells[2].Paragraphs[0].Text = $"{_data.Currency}{_data.HourlyPayment}/hr";
+                    if (workingDay.IsWorkingDay)
+                    {
+                        row.Cells[0].Paragraphs[0].Text = workingDay.Date.ToString("dd/MM/yyyy");
+                        row.Cells[1].Paragraphs[0].Text = workingDay.Date.DayOfWeek.ToString();
 
-                    totalPaymentCount = totalPaymentCount + (_data.HourlyPayment * _data.HoursPerDay);
+                        row.Cells[2].Paragraphs[0].Text = string.Empty;
 
-                    row.Cells[3].Paragraphs[0].Text = totalPaymentCount.ToString();
+                        row.Cells[3].Paragraphs[0].Text = _data.HoursPerDay.ToString();
+
+                        row.Cells[4].Paragraphs[0].Text = $"{_data.Currency}{_data.HourlyPayment}/hr";
+
+                        totalPaymentCount = totalPaymentCount + (_data.HourlyPayment * _data.HoursPerDay);
+
+                        row.Cells[5].Paragraphs[0].Text = totalPaymentCount.ToString();
+                    }
+                    else
+                    {
+                        row.Cells[0].Paragraphs[0].Text = workingDay.Date.ToString("dd/MM/yyyy");
+
+                        row.Cells[1].Paragraphs[0].Text = workingDay.Date.DayOfWeek.ToString();
+
+                        if (workingDay.IsHoliday)
+                        {
+
+                            row.Cells[2].Paragraphs[0].Text = "✓";
+                        }
+
+                        row.Cells[3].Paragraphs[0].Text = "0"; 
+                        row.Cells[4].Paragraphs[0].Text = $"{_data.Currency}{_data.HourlyPayment}/hr";
+
+                        row.Cells[5].Paragraphs[0].Text = totalPaymentCount.ToString();
+                    }
                     workingDayCount++;
                 }
 

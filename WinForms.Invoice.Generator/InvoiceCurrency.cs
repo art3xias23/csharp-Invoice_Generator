@@ -14,8 +14,10 @@ namespace WinForms.Invoice.Generator
         public void Save()
         {
             SingletonData.Instance.InvoiceData!.Currency = cmbCurrency.SelectedItem?.ToString();
-            SingletonData.Instance.InvoiceData.HourlyPayment = nudHoursPerDay.Value;
-            SingletonData.Instance.InvoiceData.HoursPerDay = SingletonData.Instance.InvoiceData.HoursPerDay;
+
+            SingletonData.Instance.InvoiceData.HourlyPayment = nudPaymentPerHour.Value;
+
+            SingletonData.Instance.InvoiceData.HoursPerDay = nudHoursPerDay.Value;
 
         }
 

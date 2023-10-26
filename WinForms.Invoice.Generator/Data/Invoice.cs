@@ -4,7 +4,7 @@ namespace WinForms.Invoice.Generator.Data;
 
 public class Invoice
 {
-    public List<DateTime> WorkingDays { get; set; }
+    public List<WorkingDay> WorkingDays { get; set; }
     public decimal HoursPerDay { get; set; }
     public decimal HourlyPayment { get; set; }
     public string? Currency { get; set; }

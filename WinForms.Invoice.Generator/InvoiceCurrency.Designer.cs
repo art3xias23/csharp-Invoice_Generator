@@ -88,6 +88,7 @@
             // 
             // nudHoursPerDay
             // 
+            this.nudHoursPerDay.DecimalPlaces = 1;
             this.nudHoursPerDay.Location = new System.Drawing.Point(275, 126);
             this.nudHoursPerDay.Name = "nudHoursPerDay";
             this.nudHoursPerDay.Size = new System.Drawing.Size(160, 23);
