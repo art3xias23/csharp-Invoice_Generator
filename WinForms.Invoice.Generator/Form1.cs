@@ -40,7 +40,6 @@ namespace WinForms.Invoice.Generator
 
                 if (nextScreen.Value is InvoiceCalendar)
                 {
-                    btnCreateInvoice.Visible = true;
                     pbRight2.Visible = false;
                 }
                 pnlMain2.Controls.Clear();
@@ -56,7 +55,6 @@ namespace WinForms.Invoice.Generator
             {
                 if (previousScreen.Value is InvoiceBank)
                 {
-                    btnCreateInvoice.Visible = false;
                     pbRight2.Visible = true;
                 }
 
@@ -68,9 +66,6 @@ namespace WinForms.Invoice.Generator
 
         private void btnCreateInvoice_Click(object sender, EventArgs e)
         {
-            var wordDocument = new MsWord(SingletonData.Instance.InvoiceData);
-
-            wordDocument.CreateInvoice();
-        }
+                  }
     }
 }
