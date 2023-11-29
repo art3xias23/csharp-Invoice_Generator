@@ -91,6 +91,8 @@ namespace WinForms.Invoice.Generator
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
+            if (_bindingList.Any(x => x.Item.Equals(e.Start)))
+                return;
             //Set as a non working day and a holiday
             _bindingList.Add(new ListBoxItem(e.Start));
             var day = _workingDays.First(x => x.Date == e.Start);

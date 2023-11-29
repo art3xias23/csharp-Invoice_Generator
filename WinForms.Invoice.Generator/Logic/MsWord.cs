@@ -128,7 +128,7 @@ namespace WinForms.Invoice.Generator.Logic
             document.AddParagraph();
 
             document.AddHorizontalLine();
-            var table = document.AddTable(_data.WorkingDays.Count, 6, WordTableStyle.GridTable1Light);
+            var table = document.AddTable(_data.WorkingDays.Count+1, 6, WordTableStyle.GridTable1Light);
             var workingDayCount = -1;
             var totalPaymentCount = 0M;
 
@@ -137,6 +137,7 @@ namespace WinForms.Invoice.Generator.Logic
             document.AddParagraph();
 
             AddHourTable(table);
+            PopulateHourTable(table);
 
             document.AddParagraph();
 
@@ -158,6 +159,51 @@ namespace WinForms.Invoice.Generator.Logic
             document.AddParagraph();
             document.AddParagraph("Sincerely,");
             document.AddParagraph(_data.OriginFirm.Name);
+        }
+
+        private void PopulateHourTable(WordTable table)
+        {
+            var totalPaymentCount = 0M;
+            var workingDayCount = 1;
+            foreach (var row in table.Rows.Skip(1))
+            {
+
+                var workingDay = _data.WorkingDays[workingDayCount-1];
+
+                if (workingDay.IsWorkingDay)
+                {
+                    row.Cells[0].Paragraphs[0].Text = workingDay.Date.ToString("dd/MM/yyyy");
+                    row.Cells[1].Paragraphs[0].Text = workingDay.Date.DayOfWeek.ToString();
+
+                    row.Cells[2].Paragraphs[0].Text = string.Empty;
+
+                    row.Cells[3].Paragraphs[0].Text = _data.HoursPerDay.ToString();
+
+                    row.Cells[4].Paragraphs[0].Text = $"{_data.Currency}{_data.HourlyPayment}/hr";
+
+                    totalPaymentCount = totalPaymentCount + (_data.HourlyPayment * _data.HoursPerDay);
+
+                    row.Cells[5].Paragraphs[0].Text = totalPaymentCount.ToString();
+                }
+                else
+                {
+                    row.Cells[0].Paragraphs[0].Text = workingDay.Date.ToString("dd/MM/yyyy");
+
+                    row.Cells[1].Paragraphs[0].Text = workingDay.Date.DayOfWeek.ToString();
+
+                    if (workingDay.IsHoliday)
+                    {
+                        row.Cells[2].Paragraphs[0].Text = "✓";
+                    }
+
+                    row.Cells[3].Paragraphs[0].Text = "0";
+                    row.Cells[4].Paragraphs[0].Text = $"{_data.Currency}{_data.HourlyPayment}/hr";
+
+                    row.Cells[5].Paragraphs[0].Text = totalPaymentCount.ToString();
+                }
+
+                workingDayCount++;
+            }
         }
 
         private void AddBankInfo(WordDocument document)
@@ -198,7 +244,7 @@ namespace WinForms.Invoice.Generator.Logic
             AddFirmInfo(document, _data.TargetFirm);
             document.AddParagraph();
 
-            document.AddParagraph($"Invoice: {_data.QuoteId:D10}");
+            document.AddParagraph($"Quote: {_data.QuoteId:D10}");
             document.AddParagraph();
 
             document.AddParagraph(_data.QuoteParagraph1.Replace("{target_name_placeholder}", _data.TargetFirm.Name));
@@ -219,6 +265,7 @@ namespace WinForms.Invoice.Generator.Logic
             var table = document.AddTable(_data.WorkingDays.Count, 6, WordTableStyle.GridTable1Light);
 
             AddHourTable(table);
+            PopulateHourTable(table);
 
             document.AddParagraph();
 
@@ -237,13 +284,7 @@ namespace WinForms.Invoice.Generator.Logic
 
         private void AddHourTable(WordTable table)
         {
-            var workingDayCount = -1;
-            var totalPaymentCount = 0M;
-
-            foreach (var row in table.Rows)
-            {
-                if (workingDayCount == -1)
-                {
+            var row = table.Rows[0];
                     row.Cells[0].Paragraphs[0].Text = "Date";
                     row.Cells[1].Paragraphs[0].Text = "Day of Week";
                     row.Cells[2].Paragraphs[0].Text = "Holiday";
@@ -252,46 +293,6 @@ namespace WinForms.Invoice.Generator.Logic
                     row.Cells[4].Paragraphs[0].Text = "Rate";
 
                     row.Cells[5].Paragraphs[0].Text = "SubTotal";
-                    workingDayCount++;
-                    continue;
-                }
-
-                var workingDay = _data.WorkingDays[workingDayCount];
-
-                if (workingDay.IsWorkingDay)
-                {
-                    row.Cells[0].Paragraphs[0].Text = workingDay.Date.ToString("dd/MM/yyyy");
-                    row.Cells[1].Paragraphs[0].Text = workingDay.Date.DayOfWeek.ToString();
-
-                    row.Cells[2].Paragraphs[0].Text = string.Empty;
-
-                    row.Cells[3].Paragraphs[0].Text = _data.HoursPerDay.ToString();
-
-                    row.Cells[4].Paragraphs[0].Text = $"{_data.Currency}{_data.HourlyPayment}/hr";
-
-                    totalPaymentCount = totalPaymentCount + (_data.HourlyPayment * _data.HoursPerDay);
-
-                    row.Cells[5].Paragraphs[0].Text = totalPaymentCount.ToString();
-                }
-                else
-                {
-                    row.Cells[0].Paragraphs[0].Text = workingDay.Date.ToString("dd/MM/yyyy");
-
-                    row.Cells[1].Paragraphs[0].Text = workingDay.Date.DayOfWeek.ToString();
-
-                    if (workingDay.IsHoliday)
-                    {
-                        row.Cells[2].Paragraphs[0].Text = "✓";
-                    }
-
-                    row.Cells[3].Paragraphs[0].Text = "0";
-                    row.Cells[4].Paragraphs[0].Text = $"{_data.Currency}{_data.HourlyPayment}/hr";
-
-                    row.Cells[5].Paragraphs[0].Text = totalPaymentCount.ToString();
-                }
-
-                workingDayCount++;
-            }
         }
 
         private decimal? GetTotalAmountPayable(Data.Invoice data)
