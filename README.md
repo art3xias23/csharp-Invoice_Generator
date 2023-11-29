@@ -10,4 +10,4 @@ Example Word Document
 
 Notes
 
-- If you wish to use this you would need to rename the Data_Examp.json to Data.json
+- If you wish to use this you would need to rename the Data_Example.json to Data.json
