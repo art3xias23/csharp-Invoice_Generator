@@ -7,3 +7,7 @@ Example Word Document
 
 
 ![Capture](https://github.com/art3xias23/csharp-Invoice_Generator/assets/23562239/f1fe744f-557e-4876-8555-d417b6940044)
+
+Notes
+
+- If you wish to use this you would need to rename the Data_Examp.json to Data.json
