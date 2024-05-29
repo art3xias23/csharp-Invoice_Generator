@@ -12,6 +12,7 @@ namespace WinForms.Invoice.Generator
             InitializeComponent();
             comboBox1.Items.Add(Enums.DocumentType.Invoice);
             comboBox1.Items.Add(Enums.DocumentType.Quote);
+            comboBox1.SelectedIndex = 0;
         }
 
         public void Save()

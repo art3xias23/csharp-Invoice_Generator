@@ -1,3 +1,4 @@
+using Velopack;
 using WinForms.Invoice.Generator.Logic;
 
 namespace WinForms.Invoice.Generator
@@ -7,6 +8,7 @@ namespace WinForms.Invoice.Generator
         [STAThread]
         static void Main()
         {
+            VelopackApp.Build().Run();
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }

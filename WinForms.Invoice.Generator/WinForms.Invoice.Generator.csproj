@@ -31,6 +31,19 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="OfficeIMO.Word" Version="0.10.0" />
+    <PackageReference Include="Velopack" Version="0.0.243" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="C:\Users\kmilchev\.nuget\packages\officeimo.word\0.10.0\contentFiles\any\net6.0\OfficeIMO.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

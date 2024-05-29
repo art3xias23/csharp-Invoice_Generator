@@ -95,7 +95,7 @@ namespace WinForms.Invoice.Generator
                 return;
             //Set as a non working day and a holiday
             _bindingList.Add(new ListBoxItem(e.Start));
-            var day = _workingDays.First(x => x.Date == e.Start);
+            var day = _workingDays.FirstOrDefault(x => x.Date == e.Start);
             if (day?.IsWorkingDay == true)
             {
                 day.IsWorkingDay = false;

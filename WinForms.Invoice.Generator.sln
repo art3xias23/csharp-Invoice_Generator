@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms.Invoice.Generator", "WinForms.Invoice.Generator\WinForms.Invoice.Generator.csproj", "{5ED089E3-A7EB-4F59-BABC-1D815DC4E852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForms.Invoice.Generator", "WinForms.Invoice.Generator\WinForms.Invoice.Generator.csproj", "{5ED089E3-A7EB-4F59-BABC-1D815DC4E852}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{FA257BD1-E4A6-4FC9-BF02-BA2E16249399}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{5ED089E3-A7EB-4F59-BABC-1D815DC4E852}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ED089E3-A7EB-4F59-BABC-1D815DC4E852}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ED089E3-A7EB-4F59-BABC-1D815DC4E852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA257BD1-E4A6-4FC9-BF02-BA2E16249399}.Debug|Any CPU.ActiveCfg = Debug
+		{FA257BD1-E4A6-4FC9-BF02-BA2E16249399}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
